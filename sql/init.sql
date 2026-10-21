@@ -134,10 +134,10 @@ CREATE TABLE africa_time_award (
     formal_portrait_photograph TEXT NOT NULL,
 
     -- SECTION E: Videos
-    video_1_personal_introduction TEXT NOT NULL,
-    video_2_achievements_and_work TEXT NOT NULL,
-    video_3_evidence_of_impact TEXT NOT NULL,
-    video_4_award_statement_and_vision TEXT NOT NULL,
+    video_1_personal_introduction TEXT ,
+    video_2_achievements_and_work TEXT ,
+    video_3_evidence_of_impact TEXT ,
+    video_4_award_statement_and_vision TEXT ,
 
     -- SECTION F: Project photographs
     photo_1_candidate_performing TEXT NOT NULL,

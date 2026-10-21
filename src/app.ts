@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import authRouter from "./routes/auth.route";
 import eventRoute  from "./routes/eventform.route"
 import newsBlogRoute from "./routes/newsBlogForm.route"
+import timeAward from "./routes/timeAward.route"
 import pool, { checkDatabaseConnection } from "./db/pool";
 import express, { type Request, type Response } from "express";
 
@@ -40,6 +41,7 @@ app.use(
 app.use("/api/auth", authRouter);
 app.use("/api/event", eventRoute)
 app.use("/api/newsBlog", newsBlogRoute)
+app.use("/api/timeAward", timeAward)
 
 
 app.get("/api/health", async (_req: Request, res: Response) => {
