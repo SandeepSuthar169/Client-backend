@@ -1,0 +1,17 @@
+$kind: http-request
+url: http://localhost:4000/api/auth/users
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"admin@example.com\",\r
+
+    \  \"password\": \"Admin@12345\",\r
+
+    \  \"role\": \"admin\"\r
+
+    }"
+auth:
+  type: bearer
+order: 4000

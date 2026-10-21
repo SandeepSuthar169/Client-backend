@@ -1,0 +1,20 @@
+$kind: http-request
+url: http://localhost:4000/api/newsBlog/newsBlog/4
+method: PUT
+body:
+  type: formdata
+  content:
+    - type: text
+      key: title
+      value: Hekethon summit 202
+    - type: text
+      key: date
+      value: 2026-01-01
+    - type: file
+      key: image_url
+      src:
+        - /C:/Users/Sande/OneDrive/Pictures/Screenshots/Screenshot 2026-09-06 085553.png
+    - type: text
+      key: location
+      value: Pretoria, South Africa
+order: 4000

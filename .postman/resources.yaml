@@ -1,0 +1,16 @@
+workspace:
+  id: 5d6c778c-96a5-46aa-8df9-a0aeea29076b
+localResources:
+  specs:
+    - ../index.yaml
+    - ../D:/Office TANIYA/africa-backend/index.yaml
+cloudResources:
+  specs:
+    ../index.yaml: 67cde27b-43c7-4295-a775-36db42e280c9
+  collections:
+    ../postman/collections/New Collection: 48046223-a0bb6720-304d-4044-8607-7658681e42f8
+  flows:
+    ../postman/flows/New action.flow: 68b6d8b1b781700013cb9638
+resourceNameMappings:
+  specs:
+    - ../index.yaml: New Specification

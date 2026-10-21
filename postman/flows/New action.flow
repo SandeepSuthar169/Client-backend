@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "name": "New action",
+  "description": "",
+  "flow": {
+    "nodes": {
+      "rWtbdEHy": {
+        "type": "action/request@1",
+        "pos": {
+          "x": 0,
+          "y": 0
+        },
+        "config": {},
+        "ui": {
+          "data": {
+            "triggerType": "request"
+          }
+        },
+        "extend": {
+          "input": {},
+          "output": {}
+        }
+      },
+      "dytB8pkU": {
+        "type": "value/template@1",
+        "pos": {
+          "x": 192,
+          "y": 200
+        },
+        "size": {
+          "width": 316,
+          "height": 108
+        },
+        "config": {
+          "data": "{{message}}",
+          "parser": "text",
+          "variables": [
+            {
+              "id": "joMTnPeB",
+              "type": "value/reference@2",
+              "kind": "reference",
+              "value": "message",
+              "key": "message",
+              "__noIn": true
+            }
+          ],
+          "variables__expanded": true
+        },
+        "ui": {
+          "data": {},
+          "namedInputsExpanded": true
+        },
+        "extend": {
+          "input": {
+            "joMTnPeB": {
+              "extends": "variables"
+            }
+          },
+          "output": {}
+        }
+      },
+      "Yl19kFZA": {
+        "type": "action/response@1",
+        "pos": {
+          "x": -328,
+          "y": -16
+        },
+        "config": {
+          "data": [
+            {
+              "id": "status",
+              "key": "Status Code",
+              "value": 200,
+              "kind": "number",
+              "type": "TYPE_NUMBER"
+            },
+            {
+              "id": "headers",
+              "key": "Headers",
+              "value": null,
+              "kind": null,
+              "type": null
+            },
+            {
+              "id": "body",
+              "key": "Body",
+              "value": "",
+              "kind": "reference",
+              "type": "value/reference@2",
+              "__noIn": true
+            }
+          ]
+        },
+        "ui": {
+          "data": {},
+          "namedInputsExpanded": true
+        },
+        "extend": {
+          "input": {
+            "headers": {
+              "extends": "data"
+            },
+            "body": {
+              "extends": "data"
+            }
+          },
+          "output": {}
+        }
+      }
+    },
+    "modules": {},
+    "connections": {
+      "o6khO-ZU": {
+        "source": "reqHeaders",
+        "sourcePort": "@",
+        "target": "rWtbdEHy",
+        "targetPort": "headers"
+      },
+      "9m8Ske37": {
+        "source": "reqParams",
+        "sourcePort": "@",
+        "target": "rWtbdEHy",
+        "targetPort": "params"
+      },
+      "-5X2XNFX": {
+        "source": "reqBody",
+        "sourcePort": "@",
+        "target": "rWtbdEHy",
+        "targetPort": "body"
+      },
+      "qJsGPUVY": {
+        "source": "Yl19kFZA",
+        "sourcePort": "status",
+        "target": "resStatus",
+        "targetPort": "@"
+      },
+      "DZO3uInd": {
+        "source": "Yl19kFZA",
+        "sourcePort": "headers",
+        "target": "resHeaders",
+        "targetPort": "@"
+      },
+      "Q1rNaPqT": {
+        "source": "Yl19kFZA",
+        "sourcePort": "body",
+        "target": "resBody",
+        "targetPort": "@"
+      },
+      "FQqfGNdx": {
+        "source": "rWtbdEHy",
+        "sourcePort": "body",
+        "target": "dytB8pkU",
+        "targetPort": "variables|joMTnPeB"
+      },
+      "xRBdfa2z": {
+        "source": "dytB8pkU",
+        "sourcePort": "data",
+        "target": "Yl19kFZA",
+        "targetPort": "data|body"
+      }
+    },
+    "annotations": {},
+    "forms": {},
+    "groups": {},
+    "ports": {},
+    "io": {
+      "reqHeaders": {
+        "type": "input",
+        "name": "headers",
+        "typeDef": {
+          "properties": {}
+        },
+        "ui": {
+          "pos": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "reqParams": {
+        "type": "input",
+        "name": "params",
+        "typeDef": {
+          "properties": {}
+        },
+        "ui": {
+          "pos": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "reqBody": {
+        "type": "input",
+        "name": "body",
+        "typeDef": {
+          "properties": {}
+        },
+        "ui": {
+          "pos": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "resStatus": {
+        "type": "output",
+        "name": "status",
+        "typeDef": {
+          "type": "number"
+        },
+        "ui": {
+          "pos": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "resHeaders": {
+        "type": "output",
+        "name": "headers",
+        "typeDef": {
+          "properties": {}
+        },
+        "ui": {
+          "pos": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "resBody": {
+        "type": "output",
+        "name": "body",
+        "typeDef": {
+          "properties": {}
+        },
+        "ui": {
+          "pos": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      }
+    },
+    "description": "",
+    "webhook": {
+      "payloadContent": "body-only",
+      "responseType": "default"
+    },
+    "meta": {},
+    "scenes": {
+      "-TdEvwjr": {
+        "name": "",
+        "slides": [
+          {
+            "id": "8WmW838W",
+            "name": "Slide 1",
+            "bounds": {
+              "left": -76.58527340889268,
+              "right": 1127.414999042471,
+              "top": -210.44930674243204,
+              "bottom": 409.6321056596394
+            }
+          }
+        ]
+      }
+    },
+    "scenarios": {
+      "gbhp2dbz": {
+        "name": "Scenario 1",
+        "type": "scenario@2",
+        "data": {
+          "reqHeaders": {
+            "id": "reqHeaders",
+            "key": "headers",
+            "value": "{}",
+            "type": {
+              "properties": {}
+            }
+          },
+          "reqParams": {
+            "id": "reqParams",
+            "key": "params",
+            "value": "{}",
+            "type": {
+              "properties": {}
+            }
+          },
+          "reqBody": {
+            "id": "reqBody",
+            "key": "body",
+            "value": "{\n\t\"message\": \"Welcome to Actions!\"\n}",
+            "type": {
+              "properties": {}
+            }
+          }
+        },
+        "createdOn": 1,
+        "updatedOn": 1
+      }
+    },
+    "datasetRuns": {},
+    "action": {},
+    "config": {
+      "definitions": {},
+      "constants": {}
+    },
+    "attributes": {
+      "name": "New action",
+      "latestVersion": null,
+      "parent": null,
+      "createdBy": 48046223,
+      "createdOn": "2025-09-02T11:44:49.872Z",
+      "updatedOn": "2025-09-02T12:05:16.404Z",
+      "fork": null,
+      "type": "action",
+      "workspace": "5d6c778c-96a5-46aa-8df9-a0aeea29076b",
+      "permissions": {
+        "canView": true,
+        "canExecute": true,
+        "canEdit": true,
+        "canDelete": true,
+        "canDeploy": true,
+        "canUpdateRoles": false,
+        "canFork": false,
+        "canEditForkDetails": false,
+        "canAddComment": false,
+        "canResolveComment": false,
+        "canDeleteComment": false
+      },
+      "activeTargets": null
+    }
+  },
+  "lockbox": {},
+  "info": {
+    "_postman_id": "c182c94d-499e-4497-b6de-47ca2b179a10"
+  },
+  "_postman_exported_at": "2026-10-21T10:37:06.880Z",
+  "_postman_exported_using": "Postman/Local Mode"
+}

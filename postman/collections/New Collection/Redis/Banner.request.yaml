@@ -1,0 +1,11 @@
+$kind: http-request
+url: http://localhost:3000/banner
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"message\": \"hiiiiiiiiiiiiiiii\"\r
+
+    }"
+order: 2000
